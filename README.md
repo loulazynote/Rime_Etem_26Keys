@@ -26,7 +26,7 @@
 
 - RIME 設定及Theme
     - `Setting/default.custom.yaml` : 此檔案才能正確完成輸入法設定
-    - `weasel.custom.yaml` : 我本人慣用的樣式主題
+    - `Setting/weasel.custom.yaml` : 我本人慣用的樣式主題
 
 ## 安裝方式
 
