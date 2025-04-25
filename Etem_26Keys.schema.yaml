@@ -69,8 +69,8 @@ speller:
     alphabet: 'abcdefghijklmnopqrstuvwxyz'
     finals: ' '
     delimiter: "'"
-    auto_select: true
-    use_space: true
+    auto_select: false
+    use_space: false
     algebra:
         __patch:
           - Etem26keys:/pinyin_to_zhuyin
