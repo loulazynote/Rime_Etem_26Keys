@@ -2,7 +2,7 @@
 schema:
     schema_id: Etem_26Keys
     name: 倚天26鍵
-    version: '2.1.0'
+    version: '2.1.2'
     author:
         - loulazynote
         - 陳皆曲 <jachuchen@yahoo.com>
@@ -69,7 +69,7 @@ speller:
     alphabet: 'abcdefghijklmnopqrstuvwxyz'
     finals: ' '
     delimiter: "'"
-    auto_select: false
+    auto_select: true
     use_space: false
     algebra:
         __patch:
