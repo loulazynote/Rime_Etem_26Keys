@@ -52,9 +52,9 @@
 
 ## 輸入方法
 
-當輸入完成後, 單擊空白鍵即可輸出
+當輸入完成後, 單擊空白鍵會選預輸出, Enter後才會完全輸出
 
-![示意圖](https://github.com/loulazynote/Rime_Yitian_26Keys/assets/33840759/5a3029f6-bbbc-40d6-a480-2542d24604f8)
+![示意圖](https://github.com/user-attachments/assets/1da74b92-4fb0-4557-a5f1-b98263094d5c)
 
 ## 鍵位圖
 
