@@ -5,22 +5,9 @@ customization:
   modified_time: "2019-06-22"
   rime_version: 1.5.3
 patch:
-  # preset_color_schemes/metro: 
-  #   author: "flypy.com"
-  #   back_color: 0xffffff
-  #   border_color: 0xe89f00
-  #   comment_text_color: 0x666666
-  #   hilited_back_color: 0xffffff
-  #   hilited_candidate_back_color: 0xe89f00
-  #   hilited_candidate_text_color: 0xffffff #首选文字颜色
-  #   hilited_comment_text_color: 0x666666
-  #   hilited_text_color: 0x000000
-  #   label_color: 0x666666 #非首选序号颜色
-  #   name: "metro"
-  #   text_color: 0x000000 #非首选文字颜色
-  "style/color_scheme": Etem26
-  "preset_color_schemes/Etem26":
-    name: Etem26
+  "style/color_scheme": PurpleDark
+  "preset_color_schemes/PurpleDark":
+    name: PurpleDark
     author: Lou
     back_color: 0x000000
     border_color: 0x000000
@@ -31,10 +18,9 @@ patch:
     hilited_candidate_back_color: 0xFF0088
     candidate_text_color: 0xFFFFFF
     comment_text_color: 0x086BFF
-  # style/color_scheme: metro
   style/display_tray_icon: true
   style/font_point: 12
-  style/font_face: "Helvetica Neue Light"
+  style/font_face: "Helvetica Neue Light, JetBrains Mono, Noto Sans Mono, Noto Sans CJK TC"
   style/horizontal: true
   style/inline_preedit: true
   style/layout/border_width: 1

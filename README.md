@@ -1,13 +1,32 @@
 # RIME 倚天26鍵輸入方案（Cross-platform）
 
-> 本方案是參考 @oniondelta/Onion_Rime_Files 的[洋蔥輸入法](https://github.com/oniondelta/Onion_Rime_Files)
+> ~~本方案是參考 @oniondelta/Onion_Rime_Files 的[洋蔥輸入法](https://github.com/oniondelta/Onion_Rime_Files)~~
+
+> 本方案參考了 (20250425)
+>
+> 1. @rime/rime-bopomofo 的[rime-bopomofo](https://github.com/rime/rime-bopomofo)
+> 1. @jachuchen/Rime-et26 的[Rime-et26](https://github.com/jachuchen/Rime-et26)
+
+## 簡介
+
+- 注音符號輸入
+- 倚天26鍵 (忘形26)
+- 支援繁簡轉換
+- 支援全形半形切換
+- 支援中英文切換
+- 支援網頁、郵件、網址識別
+- 支援自動選字
+- Enter候選字輸出
 
 ## 檔案列表
 
 - 倚天26鍵 RIME輸入方案 :
-    - Etem_26Keys.dict.yaml
-    - Etem_26Keys.schema.yaml
-    - Etem26key.txt
+    - `Etem_26Keys.schema.yaml`
+    - `Etem26key.yaml`
+
+- RIME 設定及Theme
+    - `Setting/default.custom.yaml` : 此檔案才能正確完成輸入法設定
+    - `weasel.custom.yaml` : 我本人慣用的樣式主題
 
 ## 安裝方式
 
@@ -27,9 +46,9 @@
 
 ## 注意事項
 
-- `essay-zh-hant-mc.txt` 是引用至 [洋蔥輸入法](https://github.com/oniondelta/Onion_Rime_Files/blob/main/allfiles/essay-zh-hant-mc.txt)  
-  > 20240620 停用預設八股文依賴, 改用洋蔥輸入法提供八股文
-- ~~簡繁轉換需安裝opencc才可使用~~
+- ~~`essay-zh-hant-mc.txt` 是引用至 [洋蔥輸入法](https://github.com/oniondelta/Onion_Rime_Files/blob/main/allfiles/essay-zh-hant-mc.txt)~~  
+  > ~~20240620 停用預設八股文依賴, 改用洋蔥輸入法提供八股文~~
+- 簡繁轉換需安裝opencc才可使用
 
 ## 輸入方法
 
