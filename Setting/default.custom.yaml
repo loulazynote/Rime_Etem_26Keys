@@ -1,26 +1,6 @@
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.14.3
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Thu Oct 21 17:04:30 2021"
-  rime_version: 1.5.3
 patch:
-  "key_binder/bindings":
-    - {accept: "Control+Shift+1", select: .next, when: always}
-    - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
-    - {accept: "Control+Shift+3", toggle: full_shape, when: always}
-    - {accept: "Control+Shift+4", toggle: ascii_punct, when: always}
-    - {accept: "Control+Shift+5", toggle: s2tw, when: always}
-    - {accept: "Control+Shift+6", toggle: extended_charset, when: always}
-    - {accept: "Control+Shift+exclam", select: .next, when: always}
-    - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
-    - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
-    - {accept: "Control+Shift+dollar", toggle: ascii_punct, when: always}
-    - {accept: "Control+Shift+percent", toggle: s2tw, when: always}
-    - {accept: "Control+Shift+asciicircum", toggle: extended_charset, when: always}
-  "menu/page_size": 8
   schema_list:
-    - {schema: yitian_26Keys}
+    - schema: Etem_26Keys
   "switcher/hotkeys":
     - F4
     - "Control+grave"
