@@ -52,7 +52,7 @@
 
 ## 輸入方法
 
-當輸入完成後, 單擊空白鍵會選預輸出, Enter後才會完全輸出
+當輸入完成後, 單擊空白鍵會預輸出, Enter後才會完全輸出
 
 ![示意圖](https://github.com/user-attachments/assets/1da74b92-4fb0-4557-a5f1-b98263094d5c)
 
