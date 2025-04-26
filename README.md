@@ -52,9 +52,9 @@
 
 ## 輸入方法
 
-當輸入完成後, 單擊空白鍵會預輸出, Enter後才會完全輸出
+當鍵入文字後, 會呈現類似新注音的預選文字, Enter後才會完全輸出
 
-![示意圖](https://github.com/user-attachments/assets/1da74b92-4fb0-4557-a5f1-b98263094d5c)
+![示意圖](https://github.com/user-attachments/assets/dfb58cdc-e197-4e79-be2c-97cfcc4efac0)
 
 ## 鍵位圖
 
