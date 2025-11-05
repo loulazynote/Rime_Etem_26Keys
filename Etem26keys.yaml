@@ -25,12 +25,11 @@ pinyin_to_zhuyin:
     - xform/er/R/
     - xform/eh/E/
     - xform/([iv])e/$1E/
-    - 'xform/1$/ /'
+    - xform/1$/ /
 
 keymap_etem26keys:
   __append:
-    - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR12345|bpmfdtnlvkhgvcgycjqwsexuaorwiqzpmntlh fjkd|'
-
+    - "xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR12345|bpmfdtnlvkhgvcgycjqwsexuaorwiqzpmntlhfjkd|"
 
 transform:
   __append:
@@ -77,4 +76,3 @@ transform:
     - xform/k/ˋ/
     - xform/ /ˉ/
     - xform/'//
-    - xform/ //
