@@ -71,6 +71,7 @@ translator:
     enable_user_dict: true
     enable_sentence: true
     enable_completion: false
+    prism: terra_pinyin
 
 punctuator:
     import_preset: symbols
@@ -81,13 +82,24 @@ punctuator:
         ":": ":"
         '"': '"'
         "'": "'"
+        "@": "@"
+        "*": "*"
+    symbols:
+        "@": "@"
+        "*": "*"
     comment_format: []
 
 key_binder:
     import_preset: default
     bindings:
-        - { when: composing, accept: space, send: noop }
+        - { when: composing, accept: Return, send: commit_text, priority: 100 }
+        - { when: composing, accept: KP_Enter, send: commit_text, priority: 100 }
+        - { when: composing, accept: space, send: noop, priority: 100 }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
+
+ascii_composer:
+    good_old_caps_lock: true
+    good_old_shift: false
 
 recognizer:
     patterns:
