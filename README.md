@@ -23,6 +23,7 @@
 - 倚天26鍵 RIME輸入方案 :
     - `Etem_26Keys.schema.yaml`
     - `Etem26keys.dict.yaml`
+    - `Etem26keys_phrase.dict.yaml`
 
 - RIME 設定及Theme
     - `Setting/default.custom.yaml` : 此檔案才能正確完成輸入法設定
@@ -49,6 +50,19 @@
 - ~~`essay-zh-hant-mc.txt` 是引用至 [洋蔥輸入法](https://github.com/oniondelta/Onion_Rime_Files/blob/main/allfiles/essay-zh-hant-mc.txt)~~  
   > ~~20240620 停用預設八股文依賴, 改用洋蔥輸入法提供八股文~~
 - 簡繁轉換需安裝opencc才可使用
+
+## 聯想詞優化
+
+- 參考 [JeffChien/rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 的結構，重新整理 `Etem26keys_phrase.dict.yaml`
+  的碼長與排序，維持與主字典一致的倚天26鍵字根組合，避免長碼造成選字失敗。
+- 聯想詞碼表現採靜態維護，如需新增或調整常用詞語，直接編輯 `Etem26keys_phrase.dict.yaml` 後重新部署即可。建議沿用現有
+  權重配置，讓常用詞仍能保持較高排序。
+
+### 如何使用聯想詞碼表
+
+1. **編輯碼表**：以文字編輯器開啟 `Etem26keys_phrase.dict.yaml`，依照 `詞語<Tab>編碼<Tab>權重` 的格式增修條目，
+   編碼需使用倚天26鍵字根的連打碼。
+2. **重新部署**：存檔後重新部署輸入法，新的聯想詞編碼會立即載入並參與候選排序。
 
 ## 輸入方法
 
