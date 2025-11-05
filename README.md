@@ -52,7 +52,10 @@
 
 ## 輸入方法
 
-當鍵入文字後, 會呈現類似新注音的預選文字, Enter後才會完全輸出
+當鍵入文字後, 會呈現類似新注音的預選文字, 按下 <kbd>Space</kbd> 或 <kbd>Enter</kbd> 皆可將首選候選字上屏。
+
+- 需要輸入真正的空白時, 請在沒有組字碼的狀態下直接按 <kbd>Space</kbd>。
+- 若候選字非首選, 可繼續補碼或搭配數字鍵 <kbd>1</kbd>〜<kbd>9</kbd>（含 <kbd>0</kbd>）選取。
 
 ![示意圖](https://github.com/user-attachments/assets/dfb58cdc-e197-4e79-be2c-97cfcc4efac0)
 
