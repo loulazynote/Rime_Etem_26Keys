@@ -11,90 +11,90 @@ columns:
   - code
   - weight
 ...
-我們	xoj mnf	600
-你們	nej mnf	595
-他們	ta mnf	590
-她們	ta mnf	585
-妳們	nej mnf	580
-是不是	ck bxk ck	575
-不是	bxk ck	570
-為什麼	xqk cf maf	565
-怎麼辦	qnj maf bmk	560
-怎麼樣	qnj maf etk	555
-怎麼會	qnj maf hxqk	550
-可以嗎	krk ej maj	545
-可以吧	krk ej ba	540
-可以的	krk ej dek	535
-應該	el vi	530
-應該是	el vi ck	525
-應該會	el vi hxqk	520
-因為	en xqk	515
-如果	jxf vxoj	510
-沒有	mok epk	505
-沒有啦	mok epk la	500
-沒有問題	mok epk xnk tef	495
-沒關係	mok vxm cek	490
-還是	hxmf ck	485
-這樣	grk etk	480
-這個	grk vrk	475
-這些	grk cew	470
-那個	nak vrk	465
-那些	nak cew	460
-就是	gepk ck	455
-真的	gn dek	450
-但是	dmk ck	445
-所以	sxoj ej	440
-或者	hxok grj	435
-原來	umf lif	430
-非常	fq ytf	425
-謝謝	cewk cewk	420
-謝謝你	cewk cewk nej	415
-謝謝您	cewk cewk nenf	410
-請問	velj xnk	405
-請幫忙	velj bt mtf	400
-不用客氣	bxk ulk krk vek	395
-不客氣	bxk krk vek	390
-辛苦了	cen kxj lezj	385
-麻煩你	maf fmf nej	380
-麻煩您	maf fmf nenf	375
-拜託	bik txo	370
-可能	krk nlf	365
-需要	cu ezk	360
-需要嗎	cu ezk maj	355
-需要幫忙	cu ezk bt mtf	350
-感謝	vmj cewk	345
-祝福	gxk fxf	340
-晚安	xmj m	335
-早安	qzj m	330
-加油	gea epf	325
-哈哈	ka ka	320
-好像	hzk cetk	315
-根本	vn bnj	310
-突然	txf jmf	305
-重要	gxlk ezk	300
-一樣	ek etk	295
-同樣	txlf etk	290
-不錯	bxk wxk	285
-太好了	tik hzk lezj	280
-好厲害	hzk lek hik	275
-終於	gxl uf	270
-根據	vn guk	265
-資料	q lezk	260
-設定	crk delk	255
-輸入法	cx jxk faf	250
-聯想詞	lemf cetj wf	245
-建議	gemk ek	240
-調整	tezf glj	235
-更新	gel cen	230
-測試	wrk ck	225
-成功	ylf vxl	220
-失敗	c bik	215
-支援	g umf	210
-下載	ceak qij	205
-版本	bmj bnj	200
-部署	bxk cxk	195
-啟用	vej ulk	190
-停用	telf ulk	185
-恢復	hxq fxk	180
-重新啟動	gxlk cen vej dxlk	175
-重新部署	gxlk cen bxk cxk	170
+我們	xojmnf	600
+你們	nejmnf	595
+他們	tamnf	590
+她們	tamnf	585
+妳們	nejmnf	580
+是不是	ckbxkck	575
+不是	bxkck	570
+為什麼	xqkcfmaf	565
+怎麼辦	qnjmafbmk	560
+怎麼樣	qnjmafetk	555
+怎麼會	qnjmafhxqk	550
+可以嗎	krkejmaj	545
+可以吧	krkejba	540
+可以的	krkejdek	535
+應該	elvi	530
+應該是	elvick	525
+應該會	elvihxqk	520
+因為	enxqk	515
+如果	jxfvxoj	510
+沒有	mokepk	505
+沒有啦	mokepkla	500
+沒有問題	mokepkxnktef	495
+沒關係	mokvxmcek	490
+還是	hxmfck	485
+這樣	grketk	480
+這個	grkvrk	475
+這些	grkcew	470
+那個	nakvrk	465
+那些	nakcew	460
+就是	gepkck	455
+真的	gndek	450
+但是	dmkck	445
+所以	sxojej	440
+或者	hxokgrj	435
+原來	umflif	430
+非常	fqytf	425
+謝謝	cewkcewk	420
+謝謝你	cewkcewknej	415
+謝謝您	cewkcewknenf	410
+請問	veljxnk	405
+請幫忙	veljbtmtf	400
+不用客氣	bxkulkkrkvek	395
+不客氣	bxkkrkvek	390
+辛苦了	cenkxjlezj	385
+麻煩你	maffmfnej	380
+麻煩您	maffmfnenf	375
+拜託	biktxo	370
+可能	krknlf	365
+需要	cuezk	360
+需要嗎	cuezkmaj	355
+需要幫忙	cuezkbtmtf	350
+感謝	vmjcewk	345
+祝福	gxkfxf	340
+晚安	xmjm	335
+早安	qzjm	330
+加油	geaepf	325
+哈哈	kaka	320
+好像	hzkcetk	315
+根本	vnbnj	310
+突然	txfjmf	305
+重要	gxlkezk	300
+一樣	eketk	295
+同樣	txlfetk	290
+不錯	bxkwxk	285
+太好了	tikhzklezj	280
+好厲害	hzklekhik	275
+終於	gxluf	270
+根據	vnguk	265
+資料	qlezk	260
+設定	crkdelk	255
+輸入法	cxjxkfaf	250
+聯想詞	lemfcetjwf	245
+建議	gemkek	240
+調整	tezfglj	235
+更新	gelcen	230
+測試	wrkck	225
+成功	ylfvxl	220
+失敗	cbik	215
+支援	gumf	210
+下載	ceakqij	205
+版本	bmjbnj	200
+部署	bxkcxk	195
+啟用	vejulk	190
+停用	telfulk	185
+恢復	hxqfxk	180
+重新啟動	gxlkcenvejdxlk	175
+重新部署	gxlkcenbxkcxk	170

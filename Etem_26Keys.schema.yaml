@@ -63,7 +63,7 @@ menu:
 speller:
     alphabet: "abcdefghijklmnopqrstuvwxyz"
     delimiter: "'"
-    max_code_length: 10
+    max_code_length: 16
     auto_select: false
     auto_select_unique_candidate: false
     use_space: true
