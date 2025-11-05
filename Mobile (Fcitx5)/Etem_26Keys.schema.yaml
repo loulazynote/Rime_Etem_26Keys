@@ -65,8 +65,6 @@ speller:
     auto_select: false
     auto_select_unique_candidate: false
     use_space: true
-    algebra:
-        - derive/^([a-z]{4}).+/$1/
 
 translator:
     dictionary: Etem26keys
@@ -79,7 +77,7 @@ translator:
     max_phrase_length: 10
 
 punctuator:
-    import_preset: default
+    import_preset: none
     full_shape:
         ",": ","
         ".": "."
@@ -98,9 +96,7 @@ punctuator:
         "'": "'"
         "@": "@"
         "*": "*"
-    symbols:
-        "@": ["@"]
-        "*": ["*"]
+    symbols: {}
     comment_format: []
 
 key_binder:
@@ -108,8 +104,8 @@ key_binder:
     bindings:
         - { when: composing, accept: Return, send: commit_text, priority: 100 }
         - { when: composing, accept: KP_Enter, send: commit_text, priority: 100 }
-        - { when: has_menu, accept: space, send: space, priority: 1000 }
-        - { when: composing, accept: space, send: space, priority: 1000 }
+        - { when: has_menu, accept: space, send: noop, priority: 2000 }
+        - { when: composing, accept: space, send: space, priority: 2000 }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
 
 ascii_composer:
