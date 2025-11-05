@@ -2,7 +2,7 @@
 schema:
     schema_id: Etem_26Keys
     name: 倚天26鍵
-    version: '2.1.3'
+    version: '2.2.0'
     author:
         - loulazynote
         - 陳皆曲 <jachuchen@yahoo.com>
@@ -17,24 +17,17 @@ schema:
         - 支援自動選字
         - Enter候選字輸出
         > 參考了 [rime-bopomofo](https://github.com/rime/rime-bopomofo) 及 [Rime-et26](https://github.com/jachuchen/Rime-et26)
-    dependencies:
-        - luna_pinyin
-        - terra_pinyin
 
 switches:
     - name: ascii_mode
       reset: 0
-      states: ['中', 'En']
+      states: [中文, 西文]
     - name: full_shape
       reset: 0
-      states: ['半形', '全形']
-    - options:
-          - zh_hant_tw
-          - zh_hans
+      states: [半形, 全形]
+    - name: zh_simp
       reset: 0
-      states:
-          - 繁體
-          - 簡體
+      states: [繁, 簡]
 
 engine:
     processors:
@@ -45,140 +38,62 @@ engine:
         - punctuator
         - selector
         - navigator
-        #- fluid_editor
-        - express_editor  #手機版開啟這個
+        - express_editor
     segmentors:
         - ascii_segmentor
         - matcher
         - abc_segmentor
+        - affix_segmentor
         - punct_segmentor
         - fallback_segmentor
     translators:
-        - echo_translator # ※ 沒有其他候選字時，回顯輸入碼
-        - punct_translator # ※ 轉換標點符號
-        - script_translator # ※ 腳本翻譯器，用於拼音等基於音節表的輸入方案
+        - table_translator
     filters:
-        - simplifier@zh_hans
-        - simplifier@zh_hant_tw
         - uniquifier
+        - simplifier
 
 menu:
     alternative_select_keys: '1234567890'
     page_size: 9
 
 speller:
-    alphabet: 'abcdefghijklmnopqrstuvwxyz '
-    finals: ' '
+    alphabet: "abcdefghijklmnopqrstuvwxyz"
     delimiter: "'"
-    auto_select: true
-    use_space: false
+    max_code_length: 4
+    auto_select: false
+    auto_select_unique_candidate: true
+    use_space: true
     algebra:
-        __patch:
-          - Etem26keys:/pinyin_to_zhuyin
-          - Etem26keys:/keymap_etem26keys
+        - derive/^([a-z]{4}).+/$1/
 
 translator:
-    dictionary: terra_pinyin
-    prism: Etem_26Keys
-    enable_sentence: true
+    dictionary: Etem26keys
     enable_user_dict: true
-    enable_encoder: true
-    encode_commit_history: true
-    sentence_over_completion: true
+    enable_sentence: false
     enable_completion: true
-    preedit_format:
-        __patch:
-          - Etem26keys:/transform
 
 punctuator:
-    full_shape:
-        '/': { commit: '、' }
-        ',': { commit: '，' }
-        '.': { commit: '。' }
-        ';': { commit: '；' }
-        ':': { commit: '：' }
-        '?': { commit: '？' }
-        '!': { commit: '！' }
-        '"': { pair: ['“', '”'] }
-        "'": { pair: ['‘', '’'] }
-        '(': { commit: '（' }
-        ')': { commit: '）' }
-        '[': { commit: '［' }
-        ']': { commit: '］' }
-        '{': { commit: '｛' }
-        '}': { commit: '｝' }
-        '<': { commit: '《' }
-        '>': { commit: '》' }
-        '@': { commit: '＠' }
-        '#': { commit: '＃' }
-        '$': { commit: '＄' }
-        '%': { commit: '％' }
-        '^': { commit: '＾' }
-        '&': { commit: '＆' }
-        '*': { commit: '＊' }
-        '-': { commit: '－' }
-        '_': { commit: '＿' }
-        '+': { commit: '＋' }
-        '=': { commit: '＝' }
-        '\\': { commit: '＼' }
-        '|': { commit: '｜' }
-        '`': { commit: '｀' }
-        '~': { commit: '～' }
+    import_preset: symbols
     half_shape:
-        '/': { commit: '/' }
-        ',': { commit: ',' }
-        '.': { commit: '.' }
-        ';': { commit: ';' }
-        ':': { commit: ':' }
-        '?': { commit: '?' }
-        '!': { commit: '!' }
-        '"': { commit: '"' }
-        "'": { commit: "'" }
-        '(': { commit: '(' }
-        ')': { commit: ')' }
-        '[': { commit: '[' }
-        ']': { commit: ']' }
-        '{': { commit: '{' }
-        '}': { commit: '}' }
-        '<': { commit: '<' }
-        '>': { commit: '>' }
-        '@': { commit: '@' }
-        '#': { commit: '#' }
-        '$': { commit: '$' }
-        '%': { commit: '%' }
-        '^': { commit: '^' }
-        '&': { commit: '&' }
-        '*': { commit: '*' }
-        '-': { commit: '-' }
-        '_': { commit: '_' }
-        '+': { commit: '+' }
-        '=': { commit: '=' }
-        '\\': { commit: '\\' }
-        '|': { commit: '|' }
-        '`': { commit: '`' }
-        '~': { commit: '~' }
+        ",": "，"
+        ".": "。"
+        ";": "；"
+        ":": "："
+        '"': ["「", "」"]
+        "'": ["『", "』"]
+
 key_binder:
     import_preset: default
+    bindings:
+        - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
 
 recognizer:
     patterns:
-        email: '^[a-z][-_.0-9a-z]*@.*$'
-        uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
-        url: '^(www[.]|https?:|ftp:|mailto:).*$'
-        reverse_lookup: "`[a-z]*'?$"
+        email: "^[-_+.0-9A-Za-z]+@[-0-9A-Za-z.]+$"
+        url: "^(https?://|www\\.)"
+        punct: "^[-.,:;!?]$"
 
-zh_hans:
-    option_name: zh_hans
+simplifier:
+    option_name: zh_simp
     opencc_config: t2s.json
-    tips: all
-    excluded_types: [reverse_lookup]
-
-zh_hant_tw:
-    option_name: zh_hant_tw
-    opencc_config: t2tw.json
     tips: none
-    excluded_types: [reverse_lookup]
-
-__patch:
-    # 使用八股文語言模型
-    - grammar:/hant?
