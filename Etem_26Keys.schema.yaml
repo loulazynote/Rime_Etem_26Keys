@@ -59,12 +59,10 @@ menu:
 speller:
     alphabet: "abcdefghijklmnopqrstuvwxyz"
     delimiter: "'"
-    max_code_length: 4
+    max_code_length: 10
     auto_select: false
-    auto_select_unique_candidate: true
+    auto_select_unique_candidate: false
     use_space: true
-    algebra:
-        - derive/^([a-z]{4}).+/$1/
 
 translator:
     dictionary: Etem26keys
@@ -73,19 +71,42 @@ translator:
     enable_completion: true
 
 punctuator:
-    import_preset: symbols
+    import_preset: none
+    full_shape:
+        ",": ","
+        ".": "."
+        ";": ";"
+        ":": ":"
+        '"': '"'
+        "'": "'"
+        "@": "@"
+        "*": "*"
     half_shape:
-        ",": "，"
-        ".": "。"
-        ";": "；"
-        ":": "："
-        '"': ["「", "」"]
-        "'": ["『", "』"]
+        ",": ","
+        ".": "."
+        ";": ";"
+        ":": ":"
+        '"': '"'
+        "'": "'"
+        "@": "@"
+        "*": "*"
+    symbols: {}
+    comment_format: []
 
 key_binder:
     import_preset: default
     bindings:
+        - { when: composing, accept: Return, send: commit_text, priority: 100 }
+        - { when: composing, accept: KP_Enter, send: commit_text, priority: 100 }
+        - { when: has_menu, accept: space, send: noop, priority: 2000 }
+        - { when: composing, accept: space, send: space, priority: 2000 }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
+
+ascii_composer:
+    good_old_caps_lock: true
+    good_old_shift: false
+    switch_key:
+        space: noop
 
 recognizer:
     patterns:
