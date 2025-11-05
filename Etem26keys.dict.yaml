@@ -4,6 +4,8 @@ name: Etem26keys
 version: "0.2.0"
 sort: by_weight
 use_preset_vocabulary: false
+import_tables:
+  - Etem26keys_phrase
 columns:
   - text
   - code

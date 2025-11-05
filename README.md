@@ -23,6 +23,7 @@
 - 倚天26鍵 RIME輸入方案 :
     - `Etem_26Keys.schema.yaml`
     - `Etem26keys.dict.yaml`
+    - `Etem26keys_phrase.dict.yaml`
 
 - RIME 設定及Theme
     - `Setting/default.custom.yaml` : 此檔案才能正確完成輸入法設定
@@ -49,6 +50,31 @@
 - ~~`essay-zh-hant-mc.txt` 是引用至 [洋蔥輸入法](https://github.com/oniondelta/Onion_Rime_Files/blob/main/allfiles/essay-zh-hant-mc.txt)~~  
   > ~~20240620 停用預設八股文依賴, 改用洋蔥輸入法提供八股文~~
 - 簡繁轉換需安裝opencc才可使用
+
+## 聯想詞優化
+
+- 參考 [JeffChien/rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 的作法，新增 `Etem26keys_phrase.dict.yaml`
+  作為獨立的詞語碼表，提升詞句候選排序與聯想詞品質。
+- 提供 `tools/generate_phrase_dict.py` 與 `Resource/phrase_seed.txt` 兩個輔助檔案，可依需求調整常用語並重新
+  產生詞語碼表，部署時會由主字典自動匯入。
+
+### 如何使用聯想詞碼表
+
+1. **調整詞語清單**：開啟 `Resource/phrase_seed.txt`，每行填入一個常用詞或短語。檔案可加入 `#` 開頭的註解，
+   方便分組整理，手機版本不需要另外維護。
+2. **重新產生碼表**：在專案根目錄執行下列指令，自動依據主字典 (`Etem26keys.dict.yaml`) 的字根組合出對應碼：
+
+   ```bash
+   python3 tools/generate_phrase_dict.py \
+     Etem26keys.dict.yaml \
+     Resource/phrase_seed.txt \
+     Etem26keys_phrase.dict.yaml
+   ```
+
+   - `tools/generate_phrase_dict.py` 會讀取主字典每個字最常用的編碼，幫清單中的詞語排出合適的連打碼，並依序配置權重，
+     讓輸入法在部署後能優先顯示這些聯想詞。
+   - 如果詞語內出現主字典沒有的字，腳本會在終端機列出該詞與缺漏的字，便於補齊資料。
+3. **重新部署**：將產生好的 `Etem26keys_phrase.dict.yaml` 與其他設定檔一同複製到 RIME 用戶資料夾，照一般流程重新部署即可。
 
 ## 輸入方法
 

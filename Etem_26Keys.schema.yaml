@@ -65,12 +65,16 @@ speller:
     auto_select: false
     auto_select_unique_candidate: false
     use_space: true
+    algebra:
+        - derive/^(..).+$/$1/
+        - derive/^(...).+$/$1/
 
 translator:
     dictionary: Etem26keys
     enable_user_dict: true
     enable_sentence: true
-    enable_completion: false
+    enable_completion: true
+    spelling_hints: 4
     prism: terra_pinyin
     enable_encoder: true
     encode_commit_history: true
