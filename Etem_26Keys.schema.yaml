@@ -81,10 +81,12 @@ punctuator:
         ":": ":"
         '"': '"'
         "'": "'"
+    comment_format: []
 
 key_binder:
     import_preset: default
     bindings:
+        - { when: composing, accept: space, send: noop }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
 
 recognizer:
