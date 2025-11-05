@@ -78,7 +78,16 @@
 
 ## 輸入方法
 
-當鍵入文字後, 會呈現類似新注音的預選文字, Enter後才會完全輸出
+### 選字與上屏
+
+1. 鍵入倚天26鍵的字根後，即會出現候選清單。首選可直接按下 <kbd>Space</kbd> 或 <kbd>Enter</kbd> 上屏，保持與 [rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 類似的流暢節奏。
+2. 需要挑選其他候選時，可用數字鍵 <kbd>1</kbd>〜<kbd>9</kbd> 或 <kbd>0</kbd> 指定候選位置；<kbd>←</kbd>/<kbd>→</kbd>、<kbd>PageUp</kbd>/<kbd>PageDown</kbd>、<kbd>,</kbd>/<kbd>.</kbd> 等 RIME 既有按鍵操作同樣適用。
+3. 如需輸入真正的空白，只要在沒有組字碼的情況下按 <kbd>Space</kbd>；若正在選字，可先以 <kbd>Space</kbd>/<kbd>Enter</kbd> 上屏，再補打一個 <kbd>Space</kbd>。
+
+### 反查拼音
+
+- 候選項右側會自動顯示 Terra Pinyin 的注音拼音標註，方便確認每個字詞的讀音。
+- 若想主動查詢讀音，可輸入反引號開頭的查詢碼，例如輸入 <code>`ni3</code> 會列出帶有「nǐ」讀音的候選字，完成選字後再以 <kbd>Space</kbd>/<kbd>Enter</kbd> 上屏即可。
 
 ![示意圖](https://github.com/user-attachments/assets/dfb58cdc-e197-4e79-be2c-97cfcc4efac0)
 
