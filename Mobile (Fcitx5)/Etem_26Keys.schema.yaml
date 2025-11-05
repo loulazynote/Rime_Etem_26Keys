@@ -61,30 +61,32 @@ speller:
     delimiter: "'"
     max_code_length: 4
     auto_select: false
-    auto_select_unique_candidate: true
-    use_space: true
+    auto_select_unique_candidate: false
+    use_space: false
     algebra:
         - derive/^([a-z]{4}).+/$1/
 
 translator:
     dictionary: Etem26keys
     enable_user_dict: true
-    enable_sentence: false
-    enable_completion: true
+    enable_sentence: true
+    enable_completion: false
 
 punctuator:
     import_preset: symbols
     half_shape:
-        ",": "，"
-        ".": "。"
-        ";": "；"
-        ":": "："
-        '"': ["「", "」"]
-        "'": ["『", "』"]
+        ",": ","
+        ".": "."
+        ";": ";"
+        ":": ":"
+        '"': '"'
+        "'": "'"
+    comment_format: []
 
 key_binder:
     import_preset: default
     bindings:
+        - { when: composing, accept: space, send: noop }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
 
 recognizer:
