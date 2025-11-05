@@ -7,6 +7,8 @@ schema:
         - loulazynote
         - 陳皆曲 <jachuchen@yahoo.com>
         - 佛振 <chen.sst@gmail.com>
+    dependencies:
+        - terra_pinyin
     description: |
         - 注音符號輸入
         - 倚天26鍵 (忘形26)
@@ -59,9 +61,9 @@ menu:
 speller:
     alphabet: "abcdefghijklmnopqrstuvwxyz"
     delimiter: "'"
-    max_code_length: 4
+    max_code_length: 10
     auto_select: false
-    auto_select_unique_candidate: true
+    auto_select_unique_candidate: false
     use_space: true
     algebra:
         - derive/^([a-z]{4}).+/$1/
@@ -69,23 +71,52 @@ speller:
 translator:
     dictionary: Etem26keys
     enable_user_dict: true
-    enable_sentence: false
-    enable_completion: true
+    enable_sentence: true
+    enable_completion: false
+    prism: terra_pinyin
+    enable_encoder: true
+    encode_commit_history: true
+    max_phrase_length: 10
 
 punctuator:
-    import_preset: symbols
+    import_preset: default
+    full_shape:
+        ",": ","
+        ".": "."
+        ";": ";"
+        ":": ":"
+        '"': '"'
+        "'": "'"
+        "@": "@"
+        "*": "*"
     half_shape:
-        ",": "，"
-        ".": "。"
-        ";": "；"
-        ":": "："
-        '"': ["「", "」"]
-        "'": ["『", "』"]
+        ",": ","
+        ".": "."
+        ";": ";"
+        ":": ":"
+        '"': '"'
+        "'": "'"
+        "@": "@"
+        "*": "*"
+    symbols:
+        "@": ["@"]
+        "*": ["*"]
+    comment_format: []
 
 key_binder:
     import_preset: default
     bindings:
+        - { when: composing, accept: Return, send: commit_text, priority: 100 }
+        - { when: composing, accept: KP_Enter, send: commit_text, priority: 100 }
+        - { when: has_menu, accept: space, send: space, priority: 1000 }
+        - { when: composing, accept: space, send: space, priority: 1000 }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
+
+ascii_composer:
+    good_old_caps_lock: true
+    good_old_shift: false
+    switch_key:
+        space: noop
 
 recognizer:
     patterns:
