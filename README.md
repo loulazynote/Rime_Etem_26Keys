@@ -23,6 +23,7 @@
 - 倚天26鍵 RIME輸入方案 :
     - `Etem_26Keys.schema.yaml`
     - `Etem26keys.dict.yaml`
+    - `Etem26keys_phrase.dict.yaml`
 
 - RIME 設定及Theme
     - `Setting/default.custom.yaml` : 此檔案才能正確完成輸入法設定
@@ -50,9 +51,43 @@
   > ~~20240620 停用預設八股文依賴, 改用洋蔥輸入法提供八股文~~
 - 簡繁轉換需安裝opencc才可使用
 
+## 聯想詞優化
+
+- 參考 [JeffChien/rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 的作法，新增 `Etem26keys_phrase.dict.yaml`
+  作為獨立的詞語碼表，提升詞句候選排序與聯想詞品質。
+- 提供 `tools/generate_phrase_dict.py` 與 `Resource/phrase_seed.txt` 兩個輔助檔案，可依需求調整常用語並重新
+  產生詞語碼表，部署時會由主字典自動匯入。
+
+### 如何使用聯想詞碼表
+
+1. **調整詞語清單**：開啟 `Resource/phrase_seed.txt`，每行填入一個常用詞或短語。檔案可加入 `#` 開頭的註解，
+   方便分組整理，手機版本不需要另外維護。
+2. **重新產生碼表**：在專案根目錄執行下列指令，自動依據主字典 (`Etem26keys.dict.yaml`) 的字根組合出對應碼：
+
+   ```bash
+   python3 tools/generate_phrase_dict.py \
+     Etem26keys.dict.yaml \
+     Resource/phrase_seed.txt \
+     Etem26keys_phrase.dict.yaml
+   ```
+
+   - `tools/generate_phrase_dict.py` 會讀取主字典每個字最常用的編碼，幫清單中的詞語排出合適的連打碼，並依序配置權重，
+     讓輸入法在部署後能優先顯示這些聯想詞。
+   - 如果詞語內出現主字典沒有的字，腳本會在終端機列出該詞與缺漏的字，便於補齊資料。
+3. **重新部署**：將產生好的 `Etem26keys_phrase.dict.yaml` 與其他設定檔一同複製到 RIME 用戶資料夾，照一般流程重新部署即可。
+
 ## 輸入方法
 
-當鍵入文字後, 會呈現類似新注音的預選文字, Enter後才會完全輸出
+### 選字與上屏
+
+1. 鍵入倚天26鍵的字根後，即會出現候選清單。首選可直接按下 <kbd>Space</kbd> 或 <kbd>Enter</kbd> 上屏，保持與 [rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 類似的流暢節奏。
+2. 需要挑選其他候選時，可用數字鍵 <kbd>1</kbd>〜<kbd>9</kbd> 或 <kbd>0</kbd> 指定候選位置；<kbd>←</kbd>/<kbd>→</kbd>、<kbd>PageUp</kbd>/<kbd>PageDown</kbd>、<kbd>,</kbd>/<kbd>.</kbd> 等 RIME 既有按鍵操作同樣適用。
+3. 如需輸入真正的空白，只要在沒有組字碼的情況下按 <kbd>Space</kbd>；若正在選字，可先以 <kbd>Space</kbd>/<kbd>Enter</kbd> 上屏，再補打一個 <kbd>Space</kbd>。
+
+### 反查拼音
+
+- 候選項右側會自動顯示 Terra Pinyin 的注音拼音標註，方便確認每個字詞的讀音。
+- 若想主動查詢讀音，可輸入反引號開頭的查詢碼，例如輸入 <code>`ni3</code> 會列出帶有「nǐ」讀音的候選字，完成選字後再以 <kbd>Space</kbd>/<kbd>Enter</kbd> 上屏即可。
 
 ![示意圖](https://github.com/user-attachments/assets/dfb58cdc-e197-4e79-be2c-97cfcc4efac0)
 
