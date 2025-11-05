@@ -7,6 +7,8 @@ schema:
         - loulazynote
         - 陳皆曲 <jachuchen@yahoo.com>
         - 佛振 <chen.sst@gmail.com>
+    dependencies:
+        - terra_pinyin
     description: |
         - 注音符號輸入
         - 倚天26鍵 (忘形26)
@@ -72,8 +74,21 @@ translator:
     enable_sentence: true
     enable_completion: false
     prism: terra_pinyin
+    enable_encoder: true
+    encode_commit_history: true
+    max_phrase_length: 10
 
 punctuator:
+    import_preset: default
+    full_shape:
+        ",": ","
+        ".": "."
+        ";": ";"
+        ":": ":"
+        '"': '"'
+        "'": "'"
+        "@": "@"
+        "*": "*"
     half_shape:
         ",": ","
         ".": "."
@@ -100,6 +115,8 @@ key_binder:
 ascii_composer:
     good_old_caps_lock: true
     good_old_shift: false
+    switch_key:
+        space: noop
 
 recognizer:
     patterns:
