@@ -59,9 +59,3 @@
 ## 鍵位圖
 
 ![倚天鍵位](https://user-images.githubusercontent.com/33840759/129006031-ba7e1b72-7a5f-4d84-8bf8-8fd45d92310d.jpg)
-
-## 常見問題
-
-1. 候選過多導致卡頓？建議停用八股文擴充或僅保留常用詞庫，重新部署後即可恢復流暢。
-2. 出現簡體字？請確認未啟用 zh_simp 開關，或依需求安裝 OpenCC 套件並切換為繁體。
-3. 想要不中斷上屏？本方案已預設啟用 auto_select_unique_candidate，單一候選時即自動上字。
