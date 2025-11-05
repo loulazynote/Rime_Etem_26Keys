@@ -61,16 +61,20 @@ menu:
 speller:
     alphabet: "abcdefghijklmnopqrstuvwxyz"
     delimiter: "'"
-    max_code_length: 10
+    max_code_length: 16
     auto_select: false
     auto_select_unique_candidate: false
     use_space: true
+    algebra:
+        - derive/^(..).+$/$1/
+        - derive/^(...).+$/$1/
 
 translator:
     dictionary: Etem26keys
     enable_user_dict: true
     enable_sentence: true
-    enable_completion: false
+    enable_completion: true
+    spelling_hints: 4
     prism: terra_pinyin
     enable_encoder: true
     encode_commit_history: true
@@ -104,8 +108,7 @@ key_binder:
     bindings:
         - { when: composing, accept: Return, send: commit_text, priority: 100 }
         - { when: composing, accept: KP_Enter, send: commit_text, priority: 100 }
-        - { when: has_menu, accept: space, send: noop, priority: 2000 }
-        - { when: composing, accept: space, send: space, priority: 2000 }
+        - { when: has_menu, accept: space, send: commit_candidate, priority: 2000 }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
 
 ascii_composer:

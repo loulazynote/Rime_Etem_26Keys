@@ -23,6 +23,7 @@
 - 倚天26鍵 RIME輸入方案 :
     - `Etem_26Keys.schema.yaml`
     - `Etem26keys.dict.yaml`
+    - `Etem26keys_phrase.dict.yaml`
 
 - RIME 設定及Theme
     - `Setting/default.custom.yaml` : 此檔案才能正確完成輸入法設定
@@ -50,9 +51,30 @@
   > ~~20240620 停用預設八股文依賴, 改用洋蔥輸入法提供八股文~~
 - 簡繁轉換需安裝opencc才可使用
 
+## 聯想詞優化
+
+- 參考 [JeffChien/rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 的結構，重新整理 `Etem26keys_phrase.dict.yaml`
+  的碼長與排序，維持與主字典一致的倚天26鍵字根組合，避免長碼造成選字失敗。
+- 聯想詞碼表現採靜態維護，如需新增或調整常用詞語，直接編輯 `Etem26keys_phrase.dict.yaml` 後重新部署即可。建議沿用現有
+  權重配置，讓常用詞仍能保持較高排序。
+
+### 如何使用聯想詞碼表
+
+1. **編輯碼表**：以文字編輯器開啟 `Etem26keys_phrase.dict.yaml`，依照 `詞語<Tab>編碼<Tab>權重` 的格式增修條目，
+   編碼需使用倚天26鍵字根的連打碼。
+2. **重新部署**：存檔後重新部署輸入法，新的聯想詞編碼會立即載入並參與候選排序。
+
 ## 輸入方法
 
-當鍵入文字後, 會呈現類似新注音的預選文字, Enter後才會完全輸出
+### 選字與上屏
+
+1. 鍵入倚天26鍵的字根後，即會出現候選清單。首選可直接按下 <kbd>Space</kbd> 或 <kbd>Enter</kbd> 上屏，維持與 [rime-flypyquick5](https://github.com/JeffChien/rime-flypyquick5) 相似的節奏。
+2. 重新調整的推導規則支援輸入前兩碼或前三碼就預選候選，遇到多音多義字時可繼續補碼或改按數字鍵 <kbd>1</kbd>〜<kbd>9</kbd>（含 <kbd>0</kbd>）挑選候選；<kbd>←</kbd>/<kbd>→</kbd>、<kbd>PageUp</kbd>/<kbd>PageDown</kbd>、<kbd>,</kbd>/<kbd>.</kbd> 等 RIME 既有按鍵操作同樣適用。
+3. 如需輸入真正的空白，只要在沒有組字碼的情況下按 <kbd>Space</kbd>；若正在選字，可先以 <kbd>Space</kbd>/<kbd>Enter</kbd> 上屏，再補打一個 <kbd>Space</kbd>。
+
+### 反查拼音
+
+- 本方案專注於倚天26鍵打字節奏，未內建額外的反查拼音選單；若需查詢讀音，可暫時切換至 RIME 內建的注音/拼音方案查詢後再回到本方案。 
 
 ![示意圖](https://github.com/user-attachments/assets/dfb58cdc-e197-4e79-be2c-97cfcc4efac0)
 
