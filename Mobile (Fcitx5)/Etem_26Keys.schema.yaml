@@ -7,6 +7,8 @@ schema:
         - loulazynote
         - 陳皆曲 <jachuchen@yahoo.com>
         - 佛振 <chen.sst@gmail.com>
+    dependencies:
+        - terra_pinyin
     description: |
         - 注音符號輸入
         - 倚天26鍵 (忘形26)
@@ -67,8 +69,12 @@ speller:
 translator:
     dictionary: Etem26keys
     enable_user_dict: true
-    enable_sentence: false
-    enable_completion: true
+    enable_sentence: true
+    enable_completion: false
+    prism: terra_pinyin
+    enable_encoder: true
+    encode_commit_history: true
+    max_phrase_length: 10
 
 punctuator:
     import_preset: none
