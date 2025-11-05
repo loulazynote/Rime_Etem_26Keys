@@ -61,7 +61,7 @@ speller:
     delimiter: "'"
     max_code_length: 4
     auto_select: false
-    auto_select_unique_candidate: true
+    auto_select_unique_candidate: false
     use_space: true
     algebra:
         - derive/^([a-z]{4}).+/$1/
@@ -69,7 +69,7 @@ speller:
 translator:
     dictionary: Etem26keys
     enable_user_dict: true
-    enable_sentence: false
+    enable_sentence: true
     enable_completion: true
 
 punctuator:
