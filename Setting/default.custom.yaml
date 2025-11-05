@@ -1,6 +1,6 @@
 patch:
   schema_list:
     - schema: Etem_26Keys
-  "switcher/hotkeys":
+  switcher/hotkeys:
     - F4
-    - "Control+grave"
+    - Control+grave
