@@ -59,10 +59,10 @@ menu:
 speller:
     alphabet: "abcdefghijklmnopqrstuvwxyz"
     delimiter: "'"
-    max_code_length: 4
+    max_code_length: 10
     auto_select: false
     auto_select_unique_candidate: false
-    use_space: false
+    use_space: true
     algebra:
         - derive/^([a-z]{4}).+/$1/
 
@@ -85,8 +85,8 @@ punctuator:
         "@": "@"
         "*": "*"
     symbols:
-        "@": "@"
-        "*": "*"
+        "@": { text: "@", comment: "" }
+        "*": { text: "*", comment: "" }
     comment_format: []
 
 key_binder:
@@ -94,7 +94,7 @@ key_binder:
     bindings:
         - { when: composing, accept: Return, send: commit_text, priority: 100 }
         - { when: composing, accept: KP_Enter, send: commit_text, priority: 100 }
-        - { when: composing, accept: space, send: noop, priority: 100 }
+        - { when: composing, accept: space, send: space, priority: 100 }
         - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
 
 ascii_composer:
